@@ -3,7 +3,6 @@ const textbox = document.querySelector(".textbox");
 
 let keyPressed = (e) => {
   let kc = e.keyCode;
-    console.log(kc);
     if ( (kc >= 65 && kc <= 90) || kc == 32 || kc == 21 || kc == 16) {
         if (kc == 81) { kd[0].classList.add("key__down"); }
         else if (kc == 87) { kd[1].classList.add("key__down"); }
@@ -40,10 +39,11 @@ let keyPressed = (e) => {
             kd[28].classList.add("key__down");
         }
     }
+    Key_Sound(kc);
 }
 
 let keyReleased = (e) => {
-   let kc = e.keyCode;
+    let kc = e.keyCode;
   if (kc == 81) { kd[0].classList.remove("key__down"); }
         else if (kc == 87) { kd[1].classList.remove("key__down"); }
         else if (kc == 69) { kd[2].classList.remove("key__down"); }
@@ -78,12 +78,57 @@ let keyReleased = (e) => {
 
 window.addEventListener("keydown", keyPressed);
 window.addEventListener("keyup", keyReleased);
+/*
 window.onload = () => {
 document.querySelector(".textbox").focus();
+*/
+
+function Key_Sound(kc){
+    let slct_switch = document.getElementById("switch_slct");
+    slct_switch = slct_switch.options[slct_switch.selectedIndex].value;
+    let audio
+
+    if ( (kc >= 65 && kc <= 90) || kc == 32 || kc == 21 || kc == 16) {
+    switch(slct_switch){
+        case 'Cherry적축':
+            if (kc == 32 || kc == 21) {
+                console.log("1")
+                audio = new Audio('Sound/CherryRedNOT/space.wav');
+            }else if(kc >= 65 && kc <= 67 ){
+                console.log("2")
+                audio = new Audio('Sound/CherryRedNOT/1.wav');
+            }else if(kc >= 68 && kc <= 70 ){
+                console.log("3")
+                audio = new Audio('Sound/CherryRedNOT/2.wav');
+            }else if(kc >= 71 && kc <= 73 ){
+                console.log("4")
+                audio = new Audio('Sound/CherryRedNOT/3.wav');
+            }else if(kc >= 74 && kc <= 76 ){
+                console.log("5")
+                audio = new Audio('Sound/CherryRedNOT/4.wav');
+            }else if(kc >= 77 && kc <= 79 ){
+                console.log("6")
+                audio = new Audio('Sound/CherryRedNOT/5.wav');
+            }else if(kc >= 80 && kc <= 82 ){
+                console.log("7")
+                audio = new Audio('Sound/CherryRedNOT/6.wav');
+            }else if(kc >= 83 && kc <= 85 ){
+                console.log("8")
+                audio = new Audio('Sound/CherryRedNOT/7.wav');
+            }else if(kc >= 86 && kc <= 88 ){
+                console.log("9")
+                audio = new Audio('Sound/CherryRedNOT/8.wav');
+            }else{
+                audio = new Audio('Sound/CherryRedNOT/9.wav');
+            }
+            audio.play();
+            break;
+    }
+}
 }
 
 // 브랜드별 스위치
-function Selcet_Swich(e) {
+function Select_Swich(e) {
     let Cherry = ["청축", "갈축", "적축", "흑축"];
     let Gateron = ["청축", "갈축", "적축", "흑축"];
     let Kailh = ["청축", "갈축", "적축", "흑축"];
@@ -98,15 +143,17 @@ function Selcet_Swich(e) {
 
     target.options.length = 0;
 
+    console.log(d);
     for (x in d) {
+
         let opt = document.createElement("option");
-        opt.value = d[x];
+        opt.value = e.value + d[x];
         opt.innerHTML = d[x];
         target.appendChild(opt);
     }   
 }
 
-function Selcet_Option(e) {
+function Select_Option(e) {
     let test = ["옵션 미구현"]
     let target = document.getElementById("Option_slct");
     let d
