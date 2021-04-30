@@ -81,3 +81,44 @@ window.addEventListener("keyup", keyReleased);
 window.onload = () => {
 document.querySelector(".textbox").focus();
 }
+
+// 브랜드별 스위치
+function Selcet_Swich(e) {
+    let Cherry = ["청축", "갈축", "적축", "흑축"];
+    let Gateron = ["청축", "갈축", "적축", "흑축"];
+    let Kailh = ["청축", "갈축", "적축", "흑축"];
+    let Custom = ["커스텀영역"]
+    let target = document.getElementById("switch_slct");
+    let d
+
+    if(e.value == "Cherry") d = Cherry;
+    else if(e.value == "Gateron") d = Gateron;
+    else if(e.value == "Kailh") d = Kailh;
+    else if(e.value == "Custom") d = Custom;
+
+    target.options.length = 0;
+
+    for (x in d) {
+        let opt = document.createElement("option");
+        opt.value = d[x];
+        opt.innerHTML = d[x];
+        target.appendChild(opt);
+    }   
+}
+
+function Selcet_Option(e) {
+    let test = ["옵션 미구현"]
+    let target = document.getElementById("Option_slct");
+    let d
+
+    if(e.value != "Cherry") d = test;
+
+    target.options.length = 0;
+
+    for (x in d) {
+        let opt = document.createElement("option");
+        opt.value = d[x];
+        opt.innerHTML = d[x];
+        target.appendChild(opt);
+    }   
+}

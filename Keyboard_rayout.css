@@ -54,7 +54,6 @@ body {
           box-shadow: 8px 8px 15px #d9e3ec;
   border-radius: 12px;
   min-width: 750px;
-  max-width: 1000px;
   text-align: center;
   color: #00a8ff;
 }
@@ -66,7 +65,6 @@ body {
           box-shadow: 8px 8px 15px #d9e3ec;
   border-radius: 12px;
   min-width: 750px;
-  max-width: 1000px;
 }
 
 .keyboard__keys {
@@ -115,6 +113,12 @@ body {
   width: 60%;
 }
 
+.select_form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
 h1 {
   margin: 0 0 0.25em;
 }
@@ -145,11 +149,12 @@ select::-ms-expand {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  width: 30em;
+  width: 12em;
   height: 3em;
   line-height: 3;
   background: linear-gradient(145deg, #f2f7fb, #e9f2fb);
   border-radius: 0.25em;
+  margin-right: 7px;
 }
 
 select {

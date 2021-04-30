@@ -20,21 +20,26 @@
           placeholder="Start typing on your keyboard to see the neuomorphic keyboard react..."
         ></textarea>
       </div>
-      <div class="select">
-        <select name="brand_slct" id="slct">
-          <option selected disabled>Choose an switch</option>
-          <option value="1">흑축</option>
-          <option value="2">적축</option>
-          <option value="3">갈축</option>
-          <option value="4">청축</option>
-        </select>
-        <select name="switch_slct" id="slct">
-          <option selected disabled>Choose an switch</option>
-          <option value="1">흑축</option>
-          <option value="2">적축</option>
-          <option value="3">갈축</option>
-          <option value="4">청축</option>
-        </select>
+      <div class="select_form">
+        <div class="select">
+          <select name="brand" id="brand_slct" onchange="Selcet_Swich(this)">
+            <option selected disabled>Choose an Brand</option>
+            <option value="Cherry">Cherry</option>
+            <option value="Gateron">Gateron</option>
+            <option value="Kailh">Kailh</option>
+            <option value="Custom">Custom</option>
+          </select>
+        </div>
+        <div class="select">
+          <select name="switch" id="switch_slct" onchange="Selcet_Option(this)">
+            <option selected disabled>Choose an Switch</option>
+          </select>
+        </div>
+        <div class="select">
+          <select name="Option" id="Option_slct">
+            <option selected disabled>Choose an Option</option>
+          </select>
+        </div>
       </div>
       <div class="container__content">
         <div class="keyboard">
