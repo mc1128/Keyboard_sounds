@@ -1,5 +1,6 @@
 @import url("https://fonts.googleapis.com/css?family=Ubuntu:500&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Do+Hyeon&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Noto+Serif+KR&display=swap");
 * {
   margin: 0;
   padding: 0;
@@ -9,7 +10,7 @@
 }
 
 body {
-  background: #f2f7fb;
+  background: #e8e8e8;
 }
 
 .container {
@@ -36,9 +37,7 @@ body {
 .textbox {
   width: 100%;
   resize: none;
-  background: linear-gradient(145deg, #f2f7fb, #e9f2fb);
-  -webkit-box-shadow: inset 8px 8px 15px #d9e3ec;
-          box-shadow: inset 8px 8px 15px #d9e3ec;
+  background: linear-gradient(145deg, #f4f4f2, #f4f4f2);
   border-radius: 12px;
   border: none;
   overflow: auto;
@@ -49,20 +48,20 @@ body {
 
 .info {
   padding: 25px;
-  background: linear-gradient(145deg, #f2f7fb, #e9f2fb);
-  -webkit-box-shadow: 8px 8px 15px #d9e3ec;
-          box-shadow: 8px 8px 15px #d9e3ec;
+  background: linear-gradient(145deg, #f4f4f2, #e8e8e8);
+  -webkit-box-shadow: 5px 5px 5px #bbbfca;
+          box-shadow: 5px 5px 5px #bbbfca;
   border-radius: 12px;
   min-width: 750px;
   text-align: center;
-  color: #00a8ff;
+  color: #495464;
 }
 
 .keyboard {
   padding: 25px;
-  background: linear-gradient(145deg, #f2f7fb, #e9f2fb);
-  -webkit-box-shadow: 8px 8px 15px #d9e3ec;
-          box-shadow: 8px 8px 15px #d9e3ec;
+  background: linear-gradient(145deg, #f4f4f2, #e8e8e8);
+  -webkit-box-shadow: 8px 8px 15px #bbbfca;
+          box-shadow: 8px 8px 15px #bbbfca;
   border-radius: 12px;
   min-width: 750px;
 }
@@ -91,22 +90,22 @@ body {
   min-width: 50px;
   height: 50px;
   border-radius: 15px;
-  background: linear-gradient(145deg, #f2f7fb, #e9f2fb);
-  -webkit-box-shadow: 5px 5px 15px #d9e3ec;
-          box-shadow: 5px 5px 15px #d9e3ec;
+  background: linear-gradient(145deg, #f4f4f2, #e8e8e8);
+  -webkit-box-shadow: 5px 5px 15px #bbbfca;
+          box-shadow: 5px 5px 15px #bbbfca;
 }
 
 .key__letter {
-  background: -webkit-linear-gradient(245deg, #1e71f5, #3cdee7);
+  background: -webkit-linear-gradient(245deg, #4c5664, #495464);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
 .key__down {
-  color: linear-gradient(45deg, #1e71f5, #3cdee7);
-  background: linear-gradient(145deg, #e9f2fb, #f2f7fb);
-  -webkit-box-shadow: inset 5px 5px 5px #d9e3ec;
-          box-shadow: inset 5px 5px 5px #d9e3ec;
+  color: linear-gradient(45deg, #4c5664, #495464);
+  background: linear-gradient(145deg, #f4f4f2, #e8e8e8);
+  -webkit-box-shadow: inset 5px 5px 5px #bbbfca;
+          box-shadow: inset 5px 5px 5px #bbbfca;
 }
 
 .key__space {
@@ -117,6 +116,7 @@ body {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  margin-bottom: 25px;
 }
 
 h1 {
@@ -130,10 +130,8 @@ select {
   -ms-appearance: none;
   appearance: none;
   outline: 0;
-  -webkit-box-shadow: 5px 5px 5px #d9e3ec;
-          box-shadow: 5px 5px 5px #d9e3ec;
   border: 0 !important;
-  background: linear-gradient(145deg, #f2f7fb, #e9f2fb);
+  background: linear-gradient(145deg, #e8e8e8, #f4f4f2);
   background-image: none;
   border-radius: 12px;
 }
@@ -152,9 +150,9 @@ select::-ms-expand {
   width: 12em;
   height: 3em;
   line-height: 3;
-  background: linear-gradient(145deg, #f2f7fb, #e9f2fb);
+  background: linear-gradient(145deg, #e8e8e8, #f4f4f2);
   border-radius: 0.25em;
-  margin-right: 7px;
+  margin-right: 20px;
 }
 
 select {
@@ -162,7 +160,7 @@ select {
       -ms-flex: 1;
           flex: 1;
   padding: 0 0.5em;
-  color: #00a8ff;
+  color: #495464;
   cursor: pointer;
 }
 
@@ -173,16 +171,17 @@ select {
   top: 0;
   right: 0;
   padding: 0 1em;
-  background: linear-gradient(145deg, #f2f7fb, #e9f2fb);
+  background: linear-gradient(145deg, #e8e8e8, #f4f4f2);
   cursor: pointer;
   pointer-events: none;
   -webkit-transition: 0.25s all ease;
   transition: 0.25s all ease;
-  border-radius: 12px;
+  border-top-right-radius: 12px;
+  border-bottom-right-radius: 12px;
 }
 
 /* Transition */
 .select:hover::after {
-  color: #74b9ff;
+  color: #bbbfca;
 }
 /*# sourceMappingURL=Keyboard_rayout.css.map */

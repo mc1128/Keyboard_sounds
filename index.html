@@ -5,11 +5,17 @@
     <title>키보드 사운드</title>
     <meta content="text/html; charset=utf-8" />
     <link rel="stylesheet" type="text/css" href="Keyboard_rayout.css" />
+    <!-- AOS 라이브러리 사용-->
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
   </head>
   <body>
-    <div class="container">
+    <div class="container" data-aos="fade-down" data-aos-duration="1500">
       <div class="info">Keyboard Switch Sound</div>
-      <div class="textbox__container">
+      <div
+        class="textbox__container"
+        data-aos="zoom-in"
+        data-aos-duration="1500"
+      >
         <textarea
           autofocus
           name="textbox"
@@ -17,10 +23,10 @@
           rows="10"
           class="textbox"
           style="ime-mode: auto"
-          placeholder="Start typing on your keyboard to see the neuomorphic keyboard react..."
+          placeholder="Start typing on your keyboard..."
         ></textarea>
       </div>
-      <div class="select_form">
+      <div class="select_form" data-aos="fade-up-left" data-aos-duration="1500">
         <div class="select">
           <select name="brand" id="brand_slct" onchange="Select_Swich(this)">
             <option selected disabled>Choose an Brand</option>
@@ -41,7 +47,11 @@
           </select>
         </div>
       </div>
-      <div class="container__content">
+      <div
+        class="container__content"
+        data-aos="fade-up"
+        data-aos-duration="2000"
+      >
         <div class="keyboard">
           <div class="keyboard__row">
             <div class="keyboard__keys">
@@ -97,9 +107,9 @@
                       d="M7.27 2.047a1 1 0 0 1 1.46 0l6.345 6.77c.6.638.146 1.683-.73 1.683H11.5v3a1 1 0 0 1-1 1h-5a1 1 0 0 1-1-1v-3H1.654C.78 10.5.326 9.455.924 8.816L7.27 2.047zM14.346 9.5 8 2.731 1.654 9.5H4.5a1 1 0 0 1 1 1v3h5v-3a1 1 0 0 1 1-1h2.846z"
                     />
                     <defs>
-                      <linearGradient id="MyGradient" x1="50%" y1="0%">
-                        <stop offset="50%" stop-color="#1e71f5" />
-                        <stop offset="100%" stop-color="#3cdee7" />
+                      <linearGradient id="MyGradient">
+                        <stop offset="60%" stop-color="#495464" />
+                        <stop offset="100%" stop-color="#4c5664" />
                       </linearGradient>
                     </defs>
                   </svg></p
@@ -115,5 +125,11 @@
     </div>
   </body>
   <footer></footer>
+  <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+  <script>
+    AOS.init();
+  </script>
   <script type="text/javascript" src="keyboard.js"></script>
+  <!--한글 분리사용-->
+  <script src="https://unpkg.com/hangul-js" type="text/javascript"></script>
 </html>
