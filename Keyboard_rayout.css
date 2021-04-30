@@ -1,0 +1,183 @@
+@import url("https://fonts.googleapis.com/css?family=Ubuntu:500&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Do+Hyeon&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  font-family: "Ubuntu", sans-serif;
+}
+
+body {
+  background: #f2f7fb;
+}
+
+.container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  min-height: 100vh;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.container__content {
+  width: 60%;
+}
+
+.textbox {
+  width: 100%;
+  resize: none;
+  background: linear-gradient(145deg, #f2f7fb, #e9f2fb);
+  -webkit-box-shadow: inset 8px 8px 15px #d9e3ec;
+          box-shadow: inset 8px 8px 15px #d9e3ec;
+  border-radius: 12px;
+  border: none;
+  overflow: auto;
+  padding: 20px;
+  outline: none;
+  margin: 50px 0;
+}
+
+.info {
+  padding: 25px;
+  background: linear-gradient(145deg, #f2f7fb, #e9f2fb);
+  -webkit-box-shadow: 8px 8px 15px #d9e3ec;
+          box-shadow: 8px 8px 15px #d9e3ec;
+  border-radius: 12px;
+  min-width: 750px;
+  max-width: 1000px;
+  text-align: center;
+  color: #00a8ff;
+}
+
+.keyboard {
+  padding: 25px;
+  background: linear-gradient(145deg, #f2f7fb, #e9f2fb);
+  -webkit-box-shadow: 8px 8px 15px #d9e3ec;
+          box-shadow: 8px 8px 15px #d9e3ec;
+  border-radius: 12px;
+  min-width: 750px;
+  max-width: 1000px;
+}
+
+.keyboard__keys {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.key {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 10px;
+  margin: 10px;
+  min-width: 50px;
+  height: 50px;
+  border-radius: 15px;
+  background: linear-gradient(145deg, #f2f7fb, #e9f2fb);
+  -webkit-box-shadow: 5px 5px 15px #d9e3ec;
+          box-shadow: 5px 5px 15px #d9e3ec;
+}
+
+.key__letter {
+  background: -webkit-linear-gradient(245deg, #1e71f5, #3cdee7);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.key__down {
+  color: linear-gradient(45deg, #1e71f5, #3cdee7);
+  background: linear-gradient(145deg, #e9f2fb, #f2f7fb);
+  -webkit-box-shadow: inset 5px 5px 5px #d9e3ec;
+          box-shadow: inset 5px 5px 5px #d9e3ec;
+}
+
+.key__space {
+  width: 60%;
+}
+
+h1 {
+  margin: 0 0 0.25em;
+}
+
+/* Reset Select */
+select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  -ms-appearance: none;
+  appearance: none;
+  outline: 0;
+  -webkit-box-shadow: 5px 5px 5px #d9e3ec;
+          box-shadow: 5px 5px 5px #d9e3ec;
+  border: 0 !important;
+  background: linear-gradient(145deg, #f2f7fb, #e9f2fb);
+  background-image: none;
+  border-radius: 12px;
+}
+
+/* Remove IE arrow */
+select::-ms-expand {
+  display: none;
+}
+
+/* Custom Select */
+.select {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 30em;
+  height: 3em;
+  line-height: 3;
+  background: linear-gradient(145deg, #f2f7fb, #e9f2fb);
+  border-radius: 0.25em;
+}
+
+select {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  padding: 0 0.5em;
+  color: #00a8ff;
+  cursor: pointer;
+}
+
+/* Arrow */
+.select::after {
+  content: "\25BC";
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 0 1em;
+  background: linear-gradient(145deg, #f2f7fb, #e9f2fb);
+  cursor: pointer;
+  pointer-events: none;
+  -webkit-transition: 0.25s all ease;
+  transition: 0.25s all ease;
+  border-radius: 12px;
+}
+
+/* Transition */
+.select:hover::after {
+  color: #74b9ff;
+}
+/*# sourceMappingURL=Keyboard_rayout.css.map */

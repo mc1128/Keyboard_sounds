@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+  <!-- Noncompliant -->
+  <head>
+    <title>키보드 사운드</title>
+    <meta content="text/html; charset=utf-8" />
+    <link rel="stylesheet" type="text/css" href="Keyboard_rayout.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="info">Keyboard Switch Sound</div>
+      <div class="textbox__container">
+        <textarea
+          autofocus
+          name="textbox"
+          cols="128"
+          rows="10"
+          class="textbox"
+          style="ime-mode: auto"
+          placeholder="Start typing on your keyboard to see the neuomorphic keyboard react..."
+        ></textarea>
+      </div>
+      <div class="select">
+        <select name="brand_slct" id="slct">
+          <option selected disabled>Choose an switch</option>
+          <option value="1">흑축</option>
+          <option value="2">적축</option>
+          <option value="3">갈축</option>
+          <option value="4">청축</option>
+        </select>
+        <select name="switch_slct" id="slct">
+          <option selected disabled>Choose an switch</option>
+          <option value="1">흑축</option>
+          <option value="2">적축</option>
+          <option value="3">갈축</option>
+          <option value="4">청축</option>
+        </select>
+      </div>
+      <div class="container__content">
+        <div class="keyboard">
+          <div class="keyboard__row">
+            <div class="keyboard__keys">
+              <span class="key"><p class="key__letter">Q</p></span>
+              <span class="key"><p class="key__letter">W</p></span>
+              <span class="key"><p class="key__letter">E</p></span>
+              <span class="key"><p class="key__letter">R</p></span>
+              <span class="key"><p class="key__letter">T</p></span>
+              <span class="key"><p class="key__letter">Y</p></span>
+              <span class="key"><p class="key__letter">U</p></span>
+              <span class="key"><p class="key__letter">I</p></span>
+              <span class="key"><p class="key__letter">O</p></span>
+              <span class="key"><p class="key__letter">P</p></span>
+            </div>
+          </div>
+          <div class="keyboard__row">
+            <div class="keyboard__keys">
+              <span class="key"><p class="key__letter">A</p></span>
+              <span class="key"><p class="key__letter">S</p></span>
+              <span class="key"><p class="key__letter">D</p></span>
+              <span class="key"><p class="key__letter">F</p></span>
+              <span class="key"><p class="key__letter">G</p></span>
+              <span class="key"><p class="key__letter">H</p></span>
+              <span class="key"><p class="key__letter">J</p></span>
+              <span class="key"><p class="key__letter">K</p></span>
+              <span class="key"><p class="key__letter">L</p></span>
+            </div>
+          </div>
+          <div class="keyboard__row">
+            <div class="keyboard__keys">
+              <span class="key"><p class="key__letter">Z</p></span>
+              <span class="key"><p class="key__letter">X</p></span>
+              <span class="key"><p class="key__letter">C</p></span>
+              <span class="key"><p class="key__letter">V</p></span>
+              <span class="key"><p class="key__letter">B</p></span>
+              <span class="key"><p class="key__letter">N</p></span>
+              <span class="key"><p class="key__letter">M</p></span>
+            </div>
+          </div>
+          <div class="keyboard__row">
+            <div class="keyboard__keys">
+              <span class="key"
+                ><p class="key__letter">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="16"
+                    height="16"
+                    fill="url(#MyGradient)"
+                    class="bi bi-shift"
+                    viewBox="0 0 16 16"
+                  >
+                    <path
+                      d="M7.27 2.047a1 1 0 0 1 1.46 0l6.345 6.77c.6.638.146 1.683-.73 1.683H11.5v3a1 1 0 0 1-1 1h-5a1 1 0 0 1-1-1v-3H1.654C.78 10.5.326 9.455.924 8.816L7.27 2.047zM14.346 9.5 8 2.731 1.654 9.5H4.5a1 1 0 0 1 1 1v3h5v-3a1 1 0 0 1 1-1h2.846z"
+                    />
+                    <defs>
+                      <linearGradient id="MyGradient" x1="50%" y1="0%">
+                        <stop offset="50%" stop-color="#1e71f5" />
+                        <stop offset="100%" stop-color="#3cdee7" />
+                      </linearGradient>
+                    </defs>
+                  </svg></p
+              ></span>
+              <span class="key key__space"
+                ><p class="key__letter">Space</p></span
+              >
+              <span class="key"><p class="key__letter">Eng</p></span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+  <footer></footer>
+  <script type="text/javascript" src="keyboard.js"></script>
+</html>
