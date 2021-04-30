@@ -3,6 +3,7 @@ const textbox = document.querySelector(".textbox");
 
 let keyPressed = (e) => {
   let kc = e.keyCode;
+  console.log(kc);
     if ( (kc >= 65 && kc <= 90) || kc == 32 || kc == 21 || kc == 16) {
         if (kc == 81) { kd[0].classList.add("key__down"); }
         else if (kc == 87) { kd[1].classList.add("key__down"); }
@@ -75,9 +76,20 @@ let keyReleased = (e) => {
         else if (kc == 21) { kd[28].classList.remove("key__down"); }
 }
 
+let keykorea = (e) =>{
+    console.log(e.target.value);
+    let test_korea = Hangul.disassemble(e.target.value);
+
+    console.log((test_korea[test_korea.length-1]));
+}
 
 window.addEventListener("keydown", keyPressed);
 window.addEventListener("keyup", keyReleased);
+
+window.addEventListener("input", keykorea);
+
+
+
 /*
 window.onload = () => {
 document.querySelector(".textbox").focus();
