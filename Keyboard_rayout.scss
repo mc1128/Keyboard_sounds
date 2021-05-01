@@ -5,7 +5,7 @@
 $primary-color: #e8e8e8;
 $key-corner: #f4f4f2;
 $shadow-color: #bbbfca;
-$base-color: #769fcd;
+$base-color: #f4f4f4;
 
 * {
   margin: 0;
@@ -33,7 +33,7 @@ body {
 .textbox {
   width: 100%;
   resize: none;
-  background: linear-gradient(145deg, $key-corner, $key-corner);
+  background: linear-gradient(145deg, $base-color, $key-corner);
   //box-shadow: inset 8px 8px 15px $shadow-color;
   border-radius: 12px;
   border: none;
@@ -41,6 +41,7 @@ body {
   padding: 20px;
   outline: none;
   margin: 50px 0;
+  box-shadow: 5px 5px 15px $shadow-color;
 }
 
 .info {
@@ -135,6 +136,7 @@ select::-ms-expand {
   background: linear-gradient(145deg, $primary-color, $key-corner);
   border-radius: 0.25em;
   margin-right: 20px;
+  box-shadow: 5px 5px 15px $shadow-color;
 }
 select {
   flex: 1;

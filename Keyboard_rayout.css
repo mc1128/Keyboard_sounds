@@ -37,13 +37,15 @@ body {
 .textbox {
   width: 100%;
   resize: none;
-  background: linear-gradient(145deg, #f4f4f2, #f4f4f2);
+  background: linear-gradient(145deg, #f4f4f4, #f4f4f2);
   border-radius: 12px;
   border: none;
   overflow: auto;
   padding: 20px;
   outline: none;
   margin: 50px 0;
+  -webkit-box-shadow: 5px 5px 15px #bbbfca;
+          box-shadow: 5px 5px 15px #bbbfca;
 }
 
 .info {
@@ -153,6 +155,8 @@ select::-ms-expand {
   background: linear-gradient(145deg, #e8e8e8, #f4f4f2);
   border-radius: 0.25em;
   margin-right: 20px;
+  -webkit-box-shadow: 5px 5px 15px #bbbfca;
+          box-shadow: 5px 5px 15px #bbbfca;
 }
 
 select {
