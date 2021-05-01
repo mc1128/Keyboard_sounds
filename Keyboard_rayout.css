@@ -31,7 +31,7 @@ body {
 }
 
 .container__content {
-  width: 60%;
+  width: 850px;
 }
 
 .textbox {
@@ -44,6 +44,10 @@ body {
   padding: 20px;
   outline: none;
   margin: 50px 0;
+  font-size: 18px;
+  font-weight: bold;
+  color: #3d3d3d;
+  max-width: 950px;
   -webkit-box-shadow: 5px 5px 15px #bbbfca;
           box-shadow: 5px 5px 15px #bbbfca;
 }
@@ -57,6 +61,7 @@ body {
   min-width: 750px;
   text-align: center;
   color: #495464;
+  font-weight: bold;
 }
 
 .keyboard {
@@ -65,7 +70,9 @@ body {
   -webkit-box-shadow: 8px 8px 15px #bbbfca;
           box-shadow: 8px 8px 15px #bbbfca;
   border-radius: 12px;
+  text-align: center;
   min-width: 750px;
+  max-width: 1000px;
 }
 
 .keyboard__keys {
