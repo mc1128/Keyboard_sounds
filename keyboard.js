@@ -255,10 +255,32 @@ function Keysound_info(){
 
     let key_sum = key_switch + key_option;
 
-    console.log(key_sum);
+    let ts_text = '타건 사운드는 Cherry 적축(RED) 비윤활입니다. \n\n'+
+    '사용된 키보드 : 레오폴드750R \n'+
+    '스위치 타입 : 리니어 (Linear) \n'+
+    '키압 : 45G \n'+
+    '사운드 제공 : TEST';
+
+    let test_text = Hangul.disassemble(ts_text);
+
     switch(key_sum){
         case 'CherryRedNOT':
-            document.getElementById("textvalue").value = '텍스트 값';
+            document.getElementById("textvalue").value = 
+            '타건 사운드는 Cherry 적축(RED) 비윤활입니다. \n\n'+
+            '사용된 키보드 : 레오폴드750R \n'+
+            '스위치 타입 : 리니어 (Linear) \n'+
+            '키압 : 45G \n'+
+            '사운드 제공 : TEST';
+            let arr_text = [];
+            let num = 0;
+                window.onkeypress = function(){
+                    if(num < test_text.length){ 
+                    arr_text = arr_text.concat(test_text[num]);
+                    let text_assem = Hangul.assemble(arr_text);
+                    document.getElementById("textvalue").value = text_assem;
+                    num++;
+                    }
+                }
             break;
     }
 }
