@@ -1,10 +1,46 @@
 const kd = document.querySelectorAll(".key");
 const textbox = document.querySelector(".textbox");
 
+/*
+let keykorea = (e) => {
+    let valueInVar = document.getElementById("textvalue").value;
+    let key_korean = Hangul.disassemble(e.target.value);
+    kc_korea = (key_korean[key_korean.length-1])
+
+    if (kc_korea == "ㅂ" || kc_korea == "ㅃ") { kd[0].classList.add("key__down"); }
+        else if (kc_korea == "ㅈ" || kc_korea == "ㅉ") { kd[1].classList.add("key__down"); }
+        else if (kc_korea == "ㄷ" || kc_korea == "ㄸ") { kd[2].classList.add("key__down"); }
+        else if (kc_korea == "ㄱ" || kc_korea == "ㄲ") { kd[3].classList.add("key__down"); }
+        else if (kc_korea == "ㅅ" || kc_korea == "ㅆ") { kd[4].classList.add("key__down"); }
+        else if (kc_korea == "ㅛ") { kd[5].classList.add("key__down"); }
+        else if (kc_korea == "ㅕ") { kd[6].classList.add("key__down"); }
+        else if (kc_korea == "ㅑ") { kd[7].classList.add("key__down"); }
+        else if (kc_korea == "ㅐ" || kc_korea == "ㅒ") { kd[8].classList.add("key__down"); }
+        else if (kc_korea == "ㅔ" || kc_korea == "ㅖ") { kd[9].classList.add("key__down"); }
+        else if (kc_korea == "ㅁ") { kd[10].classList.add("key__down"); }
+        else if (kc_korea == "ㄴ") { kd[11].classList.add("key__down"); }
+        else if (kc_korea == "ㅇ") { kd[12].classList.add("key__down"); }
+        else if (kc_korea == "ㄹ") { kd[13].classList.add("key__down"); }
+        else if (kc_korea == "ㅎ") { kd[14].classList.add("key__down"); }
+        else if (kc_korea == "ㅗ") { kd[15].classList.add("key__down"); }
+        else if (kc_korea == "ㅓ") { kd[16].classList.add("key__down"); }
+        else if (kc_korea == "ㅏ") { kd[17].classList.add("key__down"); }
+        else if (kc_korea == "ㅣ") { kd[18].classList.add("key__down"); }
+        else if (kc_korea == "ㅋ") { kd[19].classList.add("key__down"); }
+        else if (kc_korea == "ㅌ") { kd[20].classList.add("key__down"); }
+        else if (kc_korea == "ㅊ") { kd[21].classList.add("key__down"); }
+        else if (kc_korea == "ㅍ") { kd[22].classList.add("key__down"); }
+        else if (kc_korea == "ㅠ") { kd[23].classList.add("key__down"); }
+        else if (kc_korea == "ㅜ") { kd[24].classList.add("key__down"); }
+        else if (kc_korea == "ㅡ") { kd[25].classList.add("key__down"); }
+}*/
+
+
 let keyPressed = (e) => {
-  let kc = e.keyCode;
-  console.log(kc);
+
+    let kc = e.keyCode;
     if ( (kc >= 65 && kc <= 90) || kc == 32 || kc == 21 || kc == 16) {
+        console.log("통과")
         if (kc == 81) { kd[0].classList.add("key__down"); }
         else if (kc == 87) { kd[1].classList.add("key__down"); }
         else if (kc == 69) { kd[2].classList.add("key__down"); }
@@ -34,7 +70,7 @@ let keyPressed = (e) => {
         else if (kc == 16) { kd[26].classList.add("key__down"); }
         else if (kc == 32) {
             kd[27].classList.add("key__down");
-            textbox.innerHTML += "&nbsp;";
+            //textbox.innerHTML += "&nbsp;";
         }
         else if (kc == 21) {
             kd[28].classList.add("key__down");
@@ -45,7 +81,7 @@ let keyPressed = (e) => {
 
 let keyReleased = (e) => {
     let kc = e.keyCode;
-  if (kc == 81) { kd[0].classList.remove("key__down"); }
+    if (kc == 81 ) { kd[0].classList.remove("key__down"); }
         else if (kc == 87) { kd[1].classList.remove("key__down"); }
         else if (kc == 69) { kd[2].classList.remove("key__down"); }
         else if (kc == 82) { kd[3].classList.remove("key__down"); }
@@ -76,19 +112,11 @@ let keyReleased = (e) => {
         else if (kc == 21) { kd[28].classList.remove("key__down"); }
 }
 
-let keykorea = (e) =>{
-    console.log(e.target.value);
-    let test_korea = Hangul.disassemble(e.target.value);
 
-    console.log((test_korea[test_korea.length-1]));
-}
+//window.addEventListener("input", keykorea);
 
 window.addEventListener("keydown", keyPressed);
 window.addEventListener("keyup", keyReleased);
-
-window.addEventListener("input", keykorea);
-
-
 
 /*
 window.onload = () => {
@@ -152,6 +180,7 @@ function Select_Swich(e) {
     let Custom = ["커스텀영역"]
     let target = document.getElementById("switch_slct");
     let d
+    let x
 
     if(e.value == "Cherry") d = Cherry;
     else if(e.value == "Gateron") d = Gateron;
@@ -188,11 +217,12 @@ function Select_Swich(e) {
 }
 
 function Select_Option(e) {
-    let test = ["비윤활", "윤활"]
+    let lube_opt = ["비윤활", "윤활"]
     let target = document.getElementById("Option_slct");
     let d
+    let x
 
-    if(e.value != "Cherry") d = test;
+    if(e.value != "Cherry") d = lube_opt;
 
 
     target.options.length = 0;
@@ -215,4 +245,20 @@ function Select_Option(e) {
         opt.innerHTML = d[x];
         target.appendChild(opt);
     }   
+    Keysound_info();
+}
+
+function Keysound_info(){
+    
+    let key_switch = document.getElementById("switch_slct").value;
+    let key_option = document.getElementById("Option_slct").value;
+
+    let key_sum = key_switch + key_option;
+
+    console.log(key_sum);
+    switch(key_sum){
+        case 'CherryRedNOT':
+            document.getElementById("textvalue").value = '텍스트 값';
+            break;
+    }
 }
