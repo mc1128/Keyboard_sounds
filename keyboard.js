@@ -96,48 +96,53 @@ document.querySelector(".textbox").focus();
 */
 
 function Key_Sound(kc){
+    // 경로 패치
     let slct_switch = document.getElementById("switch_slct");
     slct_switch = slct_switch.options[slct_switch.selectedIndex].value;
     let audio
+    
+    let slct_opt = document.getElementById("Option_slct");
+    slct_opt = slct_opt.options[slct_opt.selectedIndex].value;
 
-    if ( (kc >= 65 && kc <= 90) || kc == 32 || kc == 21 || kc == 16) {
-    switch(slct_switch){
-        case 'Cherry적축':
+    let Sound_dir = "Sound/" + slct_switch + "/" + slct_opt;
+    
+    console.log(Sound_dir);
+
+    if ((kc >= 65 && kc <= 90) || kc == 32 || kc == 21 || kc == 16) {
             if (kc == 32 || kc == 21) {
                 console.log("1")
-                audio = new Audio('Sound/CherryRedNOT/space.wav');
+                audio = new Audio(Sound_dir+'/space.wav');
             }else if(kc >= 65 && kc <= 67 ){
                 console.log("2")
-                audio = new Audio('Sound/CherryRedNOT/1.wav');
+                audio = new Audio(Sound_dir+'/1.wav');
             }else if(kc >= 68 && kc <= 70 ){
                 console.log("3")
-                audio = new Audio('Sound/CherryRedNOT/2.wav');
+                audio = new Audio(Sound_dir+'/2.wav');
             }else if(kc >= 71 && kc <= 73 ){
                 console.log("4")
-                audio = new Audio('Sound/CherryRedNOT/3.wav');
+                audio = new Audio(Sound_dir+'/3.wav');
             }else if(kc >= 74 && kc <= 76 ){
                 console.log("5")
-                audio = new Audio('Sound/CherryRedNOT/4.wav');
+                audio = new Audio(Sound_dir+'/4.wav');
             }else if(kc >= 77 && kc <= 79 ){
                 console.log("6")
-                audio = new Audio('Sound/CherryRedNOT/5.wav');
+                audio = new Audio(Sound_dir+'/5.wav');
             }else if(kc >= 80 && kc <= 82 ){
                 console.log("7")
-                audio = new Audio('Sound/CherryRedNOT/6.wav');
+                audio = new Audio(Sound_dir+'/6.wav');
             }else if(kc >= 83 && kc <= 85 ){
                 console.log("8")
-                audio = new Audio('Sound/CherryRedNOT/7.wav');
+                audio = new Audio(Sound_dir+'/7.wav');
             }else if(kc >= 86 && kc <= 88 ){
                 console.log("9")
-                audio = new Audio('Sound/CherryRedNOT/8.wav');
+                audio = new Audio(Sound_dir+'/8.wav');
             }else{
-                audio = new Audio('Sound/CherryRedNOT/9.wav');
+                audio = new Audio(Sound_dir+'/9.wav');
             }
             audio.play();
-            break;
     }
 }
-}
+
 
 // 브랜드별 스위치
 function Select_Swich(e) {
@@ -157,26 +162,56 @@ function Select_Swich(e) {
 
     console.log(d);
     for (x in d) {
-
         let opt = document.createElement("option");
-        opt.value = e.value + d[x];
+        let switch_opt;
+        switch(d[x]){
+            case '청축':
+                switch_opt = "Blue";
+                break;
+            case '갈축':
+                switch_opt = "Brown";
+                break;
+            case '적축':
+                switch_opt = "Red";
+                break;
+            case '흑축':
+                switch_opt = "Black";
+                break;
+            default:
+                switch_opt = d[x];
+                break;
+        }
+        opt.value = e.value + switch_opt;
         opt.innerHTML = d[x];
         target.appendChild(opt);
     }   
 }
 
 function Select_Option(e) {
-    let test = ["옵션 미구현"]
+    let test = ["비윤활", "윤활"]
     let target = document.getElementById("Option_slct");
     let d
 
     if(e.value != "Cherry") d = test;
 
+
     target.options.length = 0;
 
     for (x in d) {
         let opt = document.createElement("option");
-        opt.value = d[x];
+        let opt_slst;
+        switch(d[x]){
+            case '비윤활':
+                opt_slst = "NOT";
+                break;
+            case '윤활':
+                opt_slst = "LUB";
+                break;
+            default:
+                opt_slst = d[x];
+                break;
+        }
+        opt.value = opt_slst;
         opt.innerHTML = d[x];
         target.appendChild(opt);
     }   
