@@ -40,7 +40,6 @@ let keyPressed = (e) => {
 
     let kc = e.keyCode;
     if ( (kc >= 65 && kc <= 90) || kc == 32 || kc == 21 || kc == 16) {
-        console.log("통과")
         if (kc == 81) { kd[0].classList.add("key__down"); }
         else if (kc == 87) { kd[1].classList.add("key__down"); }
         else if (kc == 69) { kd[2].classList.add("key__down"); }
@@ -136,37 +135,25 @@ function Key_Sound(kc){
 
     let vol = document.getElementById("key_vol")
     
-    console.log(vol.value/100)
-
-    console.log(Sound_dir);
 
     if ((kc >= 65 && kc <= 90) || kc == 32 || kc == 21 || kc == 16) {
             if (kc == 32 || kc == 21) {
-                console.log("1")
                 audio = new Audio(Sound_dir+'/space.wav');
             }else if(kc >= 65 && kc <= 67 ){
-                console.log("2")
                 audio = new Audio(Sound_dir+'/1.wav');
             }else if(kc >= 68 && kc <= 70 ){
-                console.log("3")
                 audio = new Audio(Sound_dir+'/2.wav');
             }else if(kc >= 71 && kc <= 73 ){
-                console.log("4")
                 audio = new Audio(Sound_dir+'/3.wav');
             }else if(kc >= 74 && kc <= 76 ){
-                console.log("5")
                 audio = new Audio(Sound_dir+'/4.wav');
             }else if(kc >= 77 && kc <= 79 ){
-                console.log("6")
                 audio = new Audio(Sound_dir+'/5.wav');
             }else if(kc >= 80 && kc <= 82 ){
-                console.log("7")
                 audio = new Audio(Sound_dir+'/6.wav');
             }else if(kc >= 83 && kc <= 85 ){
-                console.log("8")
                 audio = new Audio(Sound_dir+'/7.wav');
             }else if(kc >= 86 && kc <= 88 ){
-                console.log("9")
                 audio = new Audio(Sound_dir+'/8.wav');
             }else{
                 audio = new Audio(Sound_dir+'/9.wav');
