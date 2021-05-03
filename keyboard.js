@@ -133,7 +133,11 @@ function Key_Sound(kc){
     slct_opt = slct_opt.options[slct_opt.selectedIndex].value;
 
     let Sound_dir = "Sound/" + slct_switch + "/" + slct_opt;
+
+    let vol = document.getElementById("key_vol")
     
+    console.log(vol.value/100)
+
     console.log(Sound_dir);
 
     if ((kc >= 65 && kc <= 90) || kc == 32 || kc == 21 || kc == 16) {
@@ -167,6 +171,7 @@ function Key_Sound(kc){
             }else{
                 audio = new Audio(Sound_dir+'/9.wav');
             }
+            audio.volume = vol.value/100; 
             audio.play();
     }
 }
@@ -306,3 +311,8 @@ function Key_Text(ts_text){
                 }
             }
 }
+
+$('input[type=range]').on('input', function(){
+    var val = $(this).val();
+    $(this).css('background', 'linear-gradient(to right, #495464 0%, #495464 '+ val +'%, #d5d4d3 ' + val + '%, #d5d4d3 100%)');
+  });

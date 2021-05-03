@@ -10,6 +10,7 @@
       type="image/png"
       href="https://www.minchori.com/img/favicon.ico"
     />
+    <script src="http://code.jquery.com/jquery-3.6.0.js"></script>
     <link rel="stylesheet" type="text/css" href="Keyboard_rayout.css" />
     <!-- AOS 라이브러리 사용-->
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
@@ -32,7 +33,7 @@
           style="ime-mode: auto"
           readonly
           placeholder="안녕하세요. 키보드 타건음을 알려주는 사이트입니다. 
-          &#10;타건음을 들으실 스위치를 선택 후 키보드를 입력하시면됩니다.
+          &#10;타건음을 들으실 스위치를 선택 후 키보드를 입력하시면됩니다. 키보드 우측 막대는 볼륨조절 입니다.
           &#10;처음치게되면 사운드 파일을 불러와야되기에 반응이 느리며, 되도록 스피커 환경으로 사용해주세요!
           &#10;&#10;실제 타건음과 차이가 있을수있으나 최대한 비슷하게 할 수 있도록 하겠습니다. 감사합니다."
         ></textarea>
@@ -63,6 +64,22 @@
             <option selected disabled>Choose an Option</option>
           </select>
         </div>
+      </div>
+      <div
+        class="slider"
+        data-aos="fade-up"
+        data-aos-duration="1000"
+        data-aos-easing="ease-in-out"
+      >
+        <input
+          type="range"
+          min="0"
+          max="100"
+          value="50"
+          step="1"
+          class="slider__vol"
+          id="key_vol"
+        />
       </div>
       <div
         class="container__content"

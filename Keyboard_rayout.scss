@@ -68,7 +68,7 @@ body {
   border-radius: 12px;
   text-align: center;
   min-width: 750px;
-  max-width: 1000px;
+  max-width: 850px;
 
   &__keys {
     display: flex;
@@ -171,4 +171,48 @@ select {
 /* Transition */
 .select:hover::after {
   color: #bbbfca;
+}
+
+.slider__vol {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 150px;
+  height: 20px;
+  margin: 0;
+  transform-origin: 75px 75px;
+  transform: rotate(-90deg);
+  background: #d3d3d3;
+  outline: none;
+  opacity: 0.7;
+  -webkit-transition: 0.2s; /* 0.2 seconds transition on hover */
+  transition: opacity 0.2s;
+  border-radius: 7px;
+  background: linear-gradient(to right, #495464 50%, #d5d4d3 50%);
+}
+
+.slider__vol::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 20px;
+  height: 20px;
+  background: #495464;
+  border-radius: 7px;
+  cursor: pointer;
+}
+
+.slider__vol::-moz-range-thumb {
+  width: 20px;
+  height: 20px;
+  background: #495464;
+  cursor: pointer;
+}
+
+.slider__vol:hover {
+  opacity: 1; /* Fully shown on mouse-over */
+}
+
+.slider {
+  margin-right: 930px;
+  width: 0px;
+  height: 0px;
 }
