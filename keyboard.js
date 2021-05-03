@@ -175,8 +175,9 @@ function Key_Sound(kc){
 // 브랜드별 스위치
 function Select_Swich(e) {
     let Cherry = ["청축", "갈축", "적축", "흑축"];
-    let Gateron = ["청축", "갈축", "적축", "흑축"];
-    let Kailh = ["청축", "갈축", "적축", "흑축"];
+    let Gateron = ["청축", "갈축", "적축", "흑축", "광축"];
+    let Kailh = ["청축", "갈축", "적축", "흑축", "광축"];
+    let Capacity= ["노뿌", "토프레"]
     let Custom = ["커스텀영역"]
     let target = document.getElementById("switch_slct");
     let d
@@ -185,6 +186,7 @@ function Select_Swich(e) {
     if(e.value == "Cherry") d = Cherry;
     else if(e.value == "Gateron") d = Gateron;
     else if(e.value == "Kailh") d = Kailh;
+    else if(e.value == "Capacity") d = Capacity;
     else if(e.value == "Custom") d = Custom;
 
     target.options.length = 0;
@@ -205,6 +207,15 @@ function Select_Swich(e) {
                 break;
             case '흑축':
                 switch_opt = "Black";
+                break;
+            case '노뿌':
+                switch_opt = "Noppo";
+                break;
+            case '토프레':
+                switch_opt = "Topre";
+                break;
+            case '광축':
+                switch_opt = "Optical";
                 break;
             default:
                 switch_opt = d[x];
@@ -255,32 +266,43 @@ function Keysound_info(){
 
     let key_sum = key_switch + key_option;
 
-    let ts_text = '타건 사운드는 Cherry 적축(RED) 비윤활입니다. \n\n'+
-    '사용된 키보드 : 레오폴드750R \n'+
-    '스위치 타입 : 리니어 (Linear) \n'+
-    '키압 : 45G \n'+
-    '사운드 제공 : TEST';
-
-    let test_text = Hangul.disassemble(ts_text);
+    let ts_text
 
     switch(key_sum){
         case 'CherryRedNOT':
-            document.getElementById("textvalue").value = 
-            '타건 사운드는 Cherry 적축(RED) 비윤활입니다. \n\n'+
+            ts_text = '타건 사운드는 Cherry 적축(RED) 비윤활입니다. \n\n'+
             '사용된 키보드 : 레오폴드750R \n'+
             '스위치 타입 : 리니어 (Linear) \n'+
             '키압 : 45G \n'+
             '사운드 제공 : TEST';
-            let arr_text = [];
-            let num = 0;
-                window.onkeypress = function(){
-                    if(num < test_text.length){ 
-                    arr_text = arr_text.concat(test_text[num]);
-                    let text_assem = Hangul.assemble(arr_text);
-                    document.getElementById("textvalue").value = text_assem;
-                    num++;
-                    }
-                }
+            
+            Key_Text(ts_text)
+            break;
+        case 'CherryBlueNOT':
+            ts_text = '타건 사운드는 Cherry 청축(BLUE) 비윤활입니다. \n\n'+
+            '사용된 키보드 : 레오폴드750R \n'+
+            '스위치 타입 : 클릭 (Click) \n'+
+            '키압 : 50G \n'+
+            '사운드 제공 : ';
+                
+            Key_Text(ts_text)
             break;
     }
+}
+
+function Key_Text(ts_text){
+    
+    document.getElementById("textvalue").value = ts_text
+    
+    let test_text = Hangul.disassemble(ts_text);          
+    let arr_text = [];
+    let num = 0;
+        window.onkeypress = function(){
+            if(num < test_text.length){ 
+                arr_text = arr_text.concat(test_text[num]);
+                let text_assem = Hangul.assemble(arr_text);
+                document.getElementById("textvalue").value = text_assem;
+                num++;
+                }
+            }
 }
