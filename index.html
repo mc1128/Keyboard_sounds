@@ -3,7 +3,8 @@
   <!-- Noncompliant -->
   <head>
     <title>키보드 사운드</title>
-    <meta content="text/html; charset=utf-8" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta charset="UTF-8" />
     <link
       rel="icon"
       type="image/png"
@@ -30,7 +31,10 @@
           id="textvalue"
           style="ime-mode: auto"
           readonly
-          placeholder="Start typing on your keyboard..."
+          placeholder="안녕하세요. 키보드 타건음을 알려주는 사이트입니다. 
+          &#10;타건음을 들으실 스위치를 선택 후 키보드를 입력하시면됩니다.
+          &#10;처음치게되면 사운드 파일을 불러와야되기에 반응이 느리며, 되도록 스피커 환경으로 사용해주세요!
+          &#10;&#10;실제 타건음과 차이가 있을수있으나 최대한 비슷하게 할 수 있도록 하겠습니다. 감사합니다."
         ></textarea>
       </div>
       <div
@@ -45,6 +49,7 @@
             <option value="Cherry">Cherry</option>
             <option value="Gateron">Gateron</option>
             <option value="Kailh">Kailh</option>
+            <option value="Capacity">Capacity</option>
             <option value="Custom">Custom</option>
           </select>
         </div>
