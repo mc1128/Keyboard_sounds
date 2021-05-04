@@ -276,16 +276,15 @@ function Keysound_info(){
             '스위치 타입 : 클릭 (Click) \n'+
             '키압 : 50G \n'+
             '사운드 제공 : ';
-                
+
             Key_Text(ts_text)
             break;
     }
+    Audio_preload(key_switch, key_option);
 }
 
 function Key_Text(ts_text){
-    
     document.getElementById("textvalue").value = ts_text
-    
     let test_text = Hangul.disassemble(ts_text);          
     let arr_text = [];
     let num = 0;
@@ -299,11 +298,29 @@ function Key_Text(ts_text){
             }
 }
 
+
+function Audio_preload(key_switch, key_option){
+    let Sound_dirs = "Sound/" + key_switch + "/" + key_option;
+    let audios
+
+    for(let i = 1; i < 10; i++){
+        audios = new Audio(Sound_dirs+'/'+ i + '.wav');
+        console.log(i + "번 오디오 로드");
+    }
+    audios = new Audio(Sound_dirs+'/space.wav');
+}
+
+
+
+
+
+
 //볼륨키 조절을 위한 색상을 gradient로 설정
 $('input[type=range]').on('input', function(){
     var val = $(this).val();
     $(this).css('background', 'linear-gradient(to right, #495464 0%, #495464 '+ val +'%, #d5d4d3 ' + val + '%, #d5d4d3 100%)');
   });
+
 
 
 //form JS부분
