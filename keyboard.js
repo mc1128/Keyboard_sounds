@@ -1,6 +1,6 @@
 const kd = document.querySelectorAll(".key");
 const textbox = document.querySelector(".textbox");
-
+let overlap = [];
 /*
 let keykorea = (e) => {
     let valueInVar = document.getElementById("textvalue").value;
@@ -39,6 +39,7 @@ let keykorea = (e) => {
 let keyPressed = (e) => {
 
     let kc = e.keyCode;
+
     if ( (kc >= 65 && kc <= 90) || kc == 32 || kc == 21 || kc == 16) {
         if (kc == 81) { kd[0].classList.add("key__down"); }
         else if (kc == 87) { kd[1].classList.add("key__down"); }
@@ -75,11 +76,20 @@ let keyPressed = (e) => {
             kd[28].classList.add("key__down");
         }
     }
-    Key_Sound(kc);
+    //사운드가 계속 출력되지 않게 설정
+    if(overlap.indexOf(kc) == -1){
+        overlap.push(kc);
+        Key_Sound(kc);
+    }
 }
 
 let keyReleased = (e) => {
     let kc = e.keyCode;
+
+    //키가 때지면 배열 값 삭제
+    if(overlap.indexOf(kc) >= 0){
+        overlap.splice(overlap.indexOf(kc),1)
+    }
     if (kc == 81 ) { kd[0].classList.remove("key__down"); }
         else if (kc == 87) { kd[1].classList.remove("key__down"); }
         else if (kc == 69) { kd[2].classList.remove("key__down"); }
@@ -115,6 +125,9 @@ let keyReleased = (e) => {
 //window.addEventListener("input", keykorea);
 
 window.addEventListener("keydown", keyPressed);
+
+//window.addEventListener("keydown", (e) => console.log(e));
+
 window.addEventListener("keyup", keyReleased);
 
 /*
@@ -183,7 +196,6 @@ function Select_Swich(e) {
 
     target.options.length = 0;
 
-    console.log(d);
     for (x in d) {
         let opt = document.createElement("option");
         let switch_opt;
@@ -305,7 +317,6 @@ function Audio_preload(key_switch, key_option){
 
     for(let i = 1; i < 10; i++){
         audios = new Audio(Sound_dirs+'/'+ i + '.wav');
-        console.log(i + "번 오디오 로드");
     }
     audios = new Audio(Sound_dirs+'/space.wav');
 }
