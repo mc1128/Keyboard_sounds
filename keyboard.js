@@ -147,11 +147,12 @@ function Key_Sound(kc){
     let Sound_dir = "Sound/" + slct_switch + "/" + slct_opt;
 
     let vol = document.getElementById("key_vol")
-    
 
-    if ((kc >= 65 && kc <= 90) || kc == 32 || kc == 21 || kc == 16) {
+    //옵션 선택안할시 사운드 출력 안하게 제어
+    if(slct_opt != "Choose an Option"){
+        if ((kc >= 65 && kc <= 90) || kc == 32 || kc == 21 || kc == 16) {
             if (kc == 32 || kc == 21) {
-                audio = new Audio(Sound_dir+'/space.wav');
+            audio = new Audio(Sound_dir+'/space.wav');
             }else if(kc >= 65 && kc <= 67 ){
                 audio = new Audio(Sound_dir+'/1.wav');
             }else if(kc >= 68 && kc <= 70 ){
@@ -173,6 +174,7 @@ function Key_Sound(kc){
             }
             audio.volume = vol.value/100; 
             audio.play();
+        }
     }
 }
 
@@ -231,6 +233,7 @@ function Select_Swich(e) {
     }   
 }
 
+// 스위치 옵션 설정
 function Select_Option(e) {
     let lube_opt = ["비윤활", "윤활"]
     let target = document.getElementById("Option_slct");
@@ -311,28 +314,23 @@ function Key_Text(ts_text){
 }
 
 
+
+//  키보드 중복 눌림 방지
 function Audio_preload(key_switch, key_option){
     let Sound_dirs = "Sound/" + key_switch + "/" + key_option;
-    let audios
+    let audio_load;
 
     for(let i = 1; i < 10; i++){
-        audios = new Audio(Sound_dirs+'/'+ i + '.wav');
+        audio_load = new Audio(Sound_dirs+'/'+ i + '.wav');
     }
-    audios = new Audio(Sound_dirs+'/space.wav');
+    audio_load = new Audio(Sound_dirs+'/space.wav');
 }
-
-
-
-
-
 
 //볼륨키 조절을 위한 색상을 gradient로 설정
 $('input[type=range]').on('input', function(){
     var val = $(this).val();
     $(this).css('background', 'linear-gradient(to right, #495464 0%, #495464 '+ val +'%, #d5d4d3 ' + val + '%, #d5d4d3 100%)');
   });
-
-
 
 //form JS부분
 var formContainer = $('#form-container');
