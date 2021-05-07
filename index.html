@@ -28,6 +28,7 @@
  
      gtag('config', 'G-BBP9WXEQWW');
      </script>
+     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/emailjs-com@2.4.1/dist/email.min.js"> </script> 
   </head>
   <body>
     <!-- Google Tag Manager (noscript) -->
@@ -181,9 +182,10 @@
   <div id="form-content">
     <div id="form-head">
       <h1 class="pre">건의사항</h1>
-      <p class="pre">아직 미완성이예요 ㅠ</p>
+      <p class="pre">사소한 것이라도 좋아요!</p>
     </div>
     <form>
+      <input type="hidden" name="contact_number">
       <input class="input name" name="user_name" placeholder="이름" type="text"></input>
       <input class="input email" name="user_email" placeholder="이메일" type="text"></input>
       <select class="input select" name="subject">
@@ -192,7 +194,7 @@
         <option>Suggestion</option>
         <option>Contact</option>
       </select>
-      <textarea class="input message" placeholder="입력하고 싶은 내용"></textarea>
+      <textarea class="input message" name="message" placeholder="입력하고 싶은 내용"></textarea>
       <input class="input submit" type="submit" value="전송 !"></input>
     </form>
   </div>
