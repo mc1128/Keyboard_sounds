@@ -242,7 +242,6 @@ select {
   width: 20px;
   height: 20px;
   background: #495464;
-  border-radius: 7px;
   cursor: pointer;
 }
 
@@ -251,6 +250,10 @@ select {
   height: 20px;
   background: #495464;
   cursor: pointer;
+}
+
+input[type="range"] {
+  overflow: hidden;
 }
 
 .slider__vol:hover {
