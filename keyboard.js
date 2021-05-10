@@ -148,6 +148,8 @@ function Key_Sound(kc){
 
     let vol = document.getElementById("key_vol")
 
+    console.log(kc);
+
     //옵션 선택안할시 사운드 출력 안하게 제어
     if(slct_opt != "Choose an Option"){
         if ((kc >= 65 && kc <= 90) || kc == 32 || kc == 21 || kc == 16) {
@@ -190,6 +192,8 @@ function Select_Swich(e) {
     let d
     let x
 
+    console.log(e.value);
+
     if(e.value == "Cherry") d = Cherry;
     else if(e.value == "Gateron") d = Gateron;
     else if(e.value == "Kailh") d = Kailh;
@@ -197,6 +201,10 @@ function Select_Swich(e) {
     else if(e.value == "Custom") d = Custom;
 
     target.options.length = 0;
+
+    if(d.indexOf("Choose an Switch") == -1){
+        d.unshift("Choose an Switch");
+    }
 
     for (x in d) {
         let opt = document.createElement("option");
@@ -223,7 +231,7 @@ function Select_Swich(e) {
             case '광축':
                 switch_opt = "Optical";
                 break;
-            default:
+            default:    
                 switch_opt = d[x];
                 break;
         }
@@ -231,6 +239,8 @@ function Select_Swich(e) {
         opt.innerHTML = d[x];
         target.appendChild(opt);
     }   
+    document.getElementById("switch_slct")[0].disabled = true;
+
 }
 
 // 스위치 옵션 설정
@@ -241,8 +251,7 @@ function Select_Option(e) {
     let x
 
     if(e.value != "Cherry") d = lube_opt;
-
-
+    
     target.options.length = 0;
 
     for (x in d) {
@@ -294,6 +303,16 @@ function Keysound_info(){
 
             Key_Text(ts_text)
             break;
+        
+        case 'CherryBlackNOT':
+            ts_text = '타건 사운드는 Cherry 흑축(BLACK) 비윤활입니다. \n\n'+
+            '사용된 키보드 : 레오폴드750R \n'+
+            '스위치 타입 : 리니어 (Linear) \n'+
+            '키압 : 60G \n'+
+            '사운드 제공 : ';
+
+            Key_Text(ts_text)
+            break;
     }
     Audio_preload(key_switch, key_option);
 }
@@ -315,7 +334,7 @@ function Key_Text(ts_text){
 
 
 
-//  키보드 중복 눌림 방지
+//  키보드 미리로드
 function Audio_preload(key_switch, key_option){
     let Sound_dirs = "Sound/" + key_switch + "/" + key_option;
     let audio_load;
